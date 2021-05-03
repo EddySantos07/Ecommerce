@@ -1,0 +1,245 @@
+.review-container {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 50px 600px;
+  column-gap: 20px;
+  width: 75%;
+  margin: auto;
+
+}
+
+
+
+.ReviewListContainer {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  display: grid;
+  grid-template-rows: 50px auto 30px;
+  grid-template-columns: 100%
+
+}
+
+.ReviewListHeader {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 87px 90px 100px auto;
+}
+
+.numReviews {
+  grid-column-start:1
+}
+
+.RevListHeaderSort {
+  display: inline;
+  grid-column-start: 2
+}
+
+.ReviewListSort {
+  display: inline;
+  grid-column-start: 3;
+}
+
+
+.ReviewList {
+  grid-row-start: 2;
+  overflow: auto;
+}
+
+.ReviewListFooter {
+  grid-row-start: 3;
+}
+
+.ReviewBreakdown {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: grid;
+  grid-template-rows: 10% 5% 30% 20px 55%;
+}
+
+.ReviewListTile {
+  /* grid-column-start: 2; */
+  display: grid;
+  height: 300px;
+  width: 75%;
+  border-bottom: 2px solid black;
+  /* grid-template-columns: 10% auto 10% 10%; */
+  grid-template-rows: 20% 70% 10%;
+  margin: 20px;
+  justify-self: left;
+
+}
+
+/* .Revdate {
+  grid-column-start: 4;
+  grid-row-start: 1;
+  background-color: blue;
+  font-size: 10px;
+} */
+
+
+
+
+
+.BreakdownHeader {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.BreakdownPercent {
+  grid-row-start: 2;
+}
+
+.BreakdownBars {
+  grid-row-start: 3;
+  display: grid;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.starbar5 {
+  grid-row-start: 1;
+}
+
+.starbar4 {
+  grid-row-start: 2;
+}
+
+.starbar3 {
+  grid-row-start: 3;
+}
+
+.starbar2 {
+  grid-row-start: 4;
+}
+
+.starbar1 {
+  grid-row-start: 5;
+}
+
+.starbar {
+  display: grid;
+  grid-template-columns: 20% 60% 5px 20%;
+}
+
+.starText {
+  grid-column-start: 1;
+  align-self: center;
+}
+
+.RevProgress {
+  background-color: gray;
+  grid-column-start: 2;
+  height: 10px;
+  align-self: center;
+}
+
+.progressbar-progress {
+  background-color: #F4ABAB !important;
+}
+
+.reviewCount {
+  grid-column-start: 4;
+  align-self: center;
+}
+
+
+
+.BreakdownCharacteristics {
+  grid-row-start: 5;
+}
+
+.CharachContainer {
+  width: 100%;
+  height: 10px;
+  position: relative;
+}
+
+.CharachBar {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: gray;
+}
+
+/* .BarPointer {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  height: 12px;
+  width: 3px;
+  background-color: orange;
+} */
+
+.RevHeader {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: 30% auto 60% 5px;
+  grid-template-rows: auto;
+}
+
+.BreakdownStar {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.revRating {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.RevMiddle {
+  grid-row-start: 2;
+  align-self: center;
+  display: grid;
+}
+
+.RevFooter {
+  grid-row-start: 3;
+  display: grid;
+}
+
+.Revstar {
+  grid-column-start: 1;
+  justify-self: left;
+  font-size: 15px;
+}
+
+/* .reviewer-name {
+  grid-column-start: 3;
+  justify-self: right;
+  font-size: 15px;
+} */
+
+.Revdate {
+  grid-column-start: 3;
+  justify-self: right;
+  font-size: 15px;
+}
+
+.Revsummary {
+  font-weight: bold;
+}
+
+.Revresponse {
+  background-color: gray;
+}
+
+.RevModalForm {
+
+}
+
+.RevModalTitle {
+  left: 50%;
+}
+
+.RevModalSub {
+  left: 50%;
+}
+
+.RevModalStar {
+  left: 50%
+}

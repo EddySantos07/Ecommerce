@@ -1,0 +1,337 @@
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+.QAcontainer {
+  width: 75%;
+  max-height: 1200px;
+  margin: 2rem auto;
+  overflow: auto;
+}
+
+.QAcontainer_header {
+  display: flex;
+  justify-content: center;
+}
+
+.QAcontainer_subheader {
+  display: flex;
+  justify-content: center;
+}
+
+.QAlist {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAlist_displayCount {
+  font-size: 0.8em;
+}
+
+.ask-button-div {
+  margin: auto;
+  width: 50%;
+}
+
+.QAlist_askButton {
+  width: 100%;
+  font-size: 1em;
+  padding: 2%;
+  background-color: #F2F2F2;
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+  font-weight: bold;
+}
+
+.QAlist_askButton:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.QAlist_sortButton {
+  background-color:  #F2F2F2;
+  height: 25px;
+  font-size: 0.8em;
+  padding: 0;
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+}
+
+.QAlist_sortButton:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.QAlist_container {
+  max-height: 550px;
+  overflow: auto;
+}
+
+.QAlist_loadMoreQuestions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAlist_loadMoreQuestionsButton {
+  background-color:  #F2F2F2;
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+}
+
+.QAlist_loadMoreQuestionsButton:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.QAqentries {
+  margin: 1rem auto;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+  max-height: 600px;
+}
+
+.QAqentries_metaContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.QAqentries_meta {
+  font-size: 0.8em;
+}
+
+.QAqentries_questionCollpase {
+  float: right;
+}
+
+.QAqentries_questionBody {
+  font-size:medium;
+  padding: 0px 1%;
+  border: 1px solid rgba(0,0,0,rgb(0,0,0,0.5));
+  border-radius: 1rem;
+  width: 90%;
+  margin: auto;
+}
+
+.QAqentries_answers {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.8em;
+}
+
+.QAqentries_displayedAnswers {
+  max-height: 250px;
+  overflow: auto;
+  margin: auto;
+  width: 70%;
+}
+
+.QAqentries_displayCount {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.QAqentries_loadButton {
+  background-color: #F2F2F2;
+}
+
+.QAqentries_loadButton:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.QAqentries_displayButtons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAqentries_addButton {
+  background-color:  #F2F2F2;
+}
+
+.QAqentries_addButton:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.QAaentries_loadMore {
+  display: flex;
+  justify-content: space-evenly;
+  background-color:  #F2F2F2;
+}
+
+.QAaentries_displayCount {
+  font-size: 1em;
+}
+
+.QAaentries_loadButton {
+  background-color:  #F2F2F2;
+  display: flex;
+  justify-content:space-evenly;
+}
+
+.QAaentries_loadButton:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.QAaentries_collapse {
+  display: flex;
+  justify-content: space-around;
+}
+
+.QAaentries_collapseButton {
+  background-color:  #F2F2F2;
+}
+
+.QAaentries_collapseButton:hover {
+  background-color: #F4ABAB;
+  color: white;
+}
+
+.QAaentries {
+  height: 140px;
+  margin: 1em 0;
+  /* border-radius: 0.3rem; */
+  box-shadow: 0 2px 5px 0 rgb(0,0,0,0.5);
+}
+
+.QAaentries_metaContainer {
+  font-size: 1em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_meta {
+  font-size: 0.8em;
+}
+
+.QAaentries_answerBody {
+  padding: 0px 1%;
+  border: 1px solid rgba(0,0,0,rgb(0,0,0,0.5));
+  border-radius: 1rem;
+  width: 90%;
+  margin: auto;
+  overflow: auto;
+  font-size: 0.8em;
+}
+
+
+.QAaentries_images {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAaentries_thumbnails {
+  border: solid 1px rgb(0,0,0,0.5);
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+
+.QAaentries_imageModal {
+  background-color: #F4ABAB;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.QAsearch {
+  /* background-color: rgb(240, 241, 145);  */
+  display: flex;
+  justify-content: center;
+}
+
+.QAsearch_bar {
+  height: 30px;
+  margin-top: 10px;
+}
+
+.QAsearchResults {
+  /* background-color: rgb(240, 241, 145); */
+  display: flex;
+  justify-content: center;
+}
+
+.QAqmodal {
+  /* background-color: rgb(136, 152, 245); */ 
+}
+
+.QAqmodal_title {
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+
+.QAqmodal_subtitle {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+}
+
+.QAqmodal_label {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.QAqmodal_subscript {
+  font-size: 1em;
+}
+
+/* QA-AnswerModal Styling */
+.QAamodal {
+  background-color: #F4ABAB;
+}
+
+.QAamodal_title {
+  display: flex;
+  justify-content: center;
+}
+
+.QAamodal_subtitle {
+  display: flex;
+  justify-content: center;
+}
+
+.QAamodal_label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.QAamodal_textareaField {
+  margin-bottom: 10px;
+}
+
+.QAamodal_uploadButton {
+  display: block;
+  margin-right: auto;
+}
+
+.QAamodal_subscript {
+  font-size: 0.7em;
+}
+
+.QAamodal_submitButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.QAimage {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.QAimage_thumbnail {
+  margin: 0 5px;
+  height: 50px;
+  width: 50px;
+}
+
+.closeButton {
+  float:right;
+}
+
+[class ^= ReactModal] {
+  width: 70% !important;
+  margin: auto !important;
+}
