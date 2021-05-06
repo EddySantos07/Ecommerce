@@ -12,7 +12,6 @@ const FetchProductsAction = (productID) => {
         },
       })
       .then((data) => {
-        // console.log(data, "product");
         dispatch({
           type: "PRODUCTS_SUCCESS",
           payload: data,

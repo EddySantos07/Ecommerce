@@ -5,7 +5,7 @@ const FetchProductsReducer = (state = { Products: {} }, action) => {
     case "PRODUCTS_SUCCESS":
       return { ...action.payload };
     case "PRODUCTS_FAILED":
-      return { ...state };
+      return { ...action.payload };
     default:
       return state;
   }

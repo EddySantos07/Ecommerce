@@ -10,15 +10,4 @@ const FetchProducts = (props) => {
   return <div></div>;
 };
 
-// class FetchProducts extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   render() {
-//     console.log(this.props, "props", this.state, this);
-//     return <div></div>;
-//   }
-// }
-
 export default FetchProducts;

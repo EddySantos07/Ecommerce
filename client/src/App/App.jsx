@@ -1,6 +1,10 @@
 import React from "react";
 
-import FetchProductsContainer from './Redux/Containers/FetchProductContainer/FetchProductContainer';
+import FetchProductsContainer from "./Redux/Containers/FetchProductContainer/FetchProductContainer";
+
+import Header from "./Components/Header/Header";
+import ProductOverviewContainer from "./Redux/Containers/MainComponents/ProductOverviewContainer/ProductOverviewContainer";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -8,12 +12,18 @@ class App extends React.Component {
   }
 
   render() {
-
     return (
-      <div>
-        fetch products
-        <FetchProductsContainer/>
-      </div>
+      <>
+        <FetchProductsContainer />
+        <div className="App">
+          <Header />
+          <ProductOverviewContainer />
+          {/* related */}
+          {/* QA */}
+          {/* Reviews */}
+          {/* footer */}
+        </div>
+      </>
     );
   }
 }
