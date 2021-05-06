@@ -1,16 +1,26 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import FetchProducts from '../../../Components/FetchProducts/FetchProducts';
+import FetchProducts from "../../../Components/FetchProducts/FetchProducts";
 
-import FetchProductsAction from '../../Actions/FetchProductsAction/FetchProductsAction';
+import FetchProductsAction from "../../Actions/FetchProductsAction/FetchProductsAction";
 
-const mapDispatchToProps = (dispatch) => ({
-    
+
+const mapStateToProps = (state) => {
+  return  {
+    Products: state.Products
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
     FetchProductsAPI: (ProductID) => {
-        dispatch(FetchProductsAction(ProductID));
+      dispatch(FetchProductsAction(ProductID));
     }
-});
+  };
+};
 
-const FetchProductsConnect = connect(null, mapDispatchToProps)(FetchProducts)
+const FetchProductsContainer = connect(mapStateToProps, mapDispatchToProps)( FetchProducts );
 
-export default FetchProductsConnect;
+export default FetchProductsContainer;
+
+

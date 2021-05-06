@@ -1,24 +1,29 @@
 import axios from "axios";
 import API_KEY from "../../../../../../config.js";
 
+// /${11001}/styles
+
 const FetchProductsAction = (productID) => {
-  return dispatch => {
+  return (dispatch) => {
     axios
-      .get(
-        `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${productID}`,
-        {
-          headers: {
-            Authorization: API_KEY,
-          },
-        }
-      )
-      .then( data => {
-        console.log(data, 'product');
-        // return data.data;
+      .get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products`, {
+        headers: {
+          Authorization: API_KEY,
+        },
       })
-      .catch( err => {
+      .then((data) => {
+        // console.log(data, "product");
+        dispatch({
+          type: "PRODUCTS_SUCCESS",
+          payload: data,
+        });
+      })
+      .catch((err) => {
         console.log(err);
-        // return err;
+        dispatch({
+          type: "PRODUCTS_FAILED",
+          payload: err,
+        });
       });
   };
 };

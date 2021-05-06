@@ -6,7 +6,7 @@ import RootReducer from "./Reducers/RootReducer/RootReducer";
 
 let initialState = {
   Product: {},
-  Products: [],
+  Products: {},
   ProductStyles: {},
 };
 
@@ -24,9 +24,8 @@ const enhancer = composeEnhancers(
 
 const store = createStore(
   RootReducer,
-
   initialState,
-  enhancer
+  applyMiddleware(thunk)
 );
 
 // persistedReducer,

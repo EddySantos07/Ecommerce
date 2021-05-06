@@ -1,12 +1,10 @@
 import React from "react";
 
-import FetchProducts from "./Components/FetchProducts/FetchProducts";
+import FetchProductsContainer from './Redux/Containers/FetchProductContainer/FetchProductContainer';
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {};
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -14,7 +12,7 @@ class App extends React.Component {
     return (
       <div>
         fetch products
-        <FetchProducts />
+        <FetchProductsContainer/>
       </div>
     );
   }

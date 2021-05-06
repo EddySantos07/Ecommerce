@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import FetchProductsReducer from "../FetchProductsReducer/FetchProductsRecuer";
+import FetchProductsReducer from "../FetchProductsReducer/FetchProductsReducer";
 
 const RootReducer = combineReducers({
   Products: FetchProductsReducer,
