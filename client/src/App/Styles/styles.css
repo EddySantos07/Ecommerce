@@ -13,7 +13,7 @@
 /* ///////////// */
 
 /* Product overview main compoent*/
-.parent {
+.ProductOverviewContainer {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(9, 1fr);
@@ -21,7 +21,7 @@
   grid-row-gap: 0px;
 }
 
-.div1 {
+.MainImageGalleryContainer {
   grid-area: 1 / 1 / 8 / 2;
 }
 .div2 {
