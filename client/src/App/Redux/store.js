@@ -5,6 +5,7 @@ import thunk from "redux-thunk";
 import RootReducer from "./Reducers/RootReducer/RootReducer";
 
 let initialState = {
+  CurrentProductID: '11001',
   Product: {},
   Products: {},
   ProductStyles: {},

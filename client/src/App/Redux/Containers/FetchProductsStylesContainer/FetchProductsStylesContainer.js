@@ -1,23 +1,27 @@
 import { connect } from "react-redux";
+import FetchProductStylesAction from '../../Actions/FetchProductStylesAction/FetchProductStylesAction';
 
+import FetchProductStyles from '../../../Components/FetchProductStyles/FetchProductStyles';
 
 const mapStateToProps = (state) => {
-
+   
     return {
-        ProductStyles: state.ProductStyles
+        CurrentProductID: state.CurrentProductID
     }
 
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        FetchProductsStylesContainer: 
+        FetchProductsStylesAPI: (ProductID) => {
+            dispatch(FetchProductStylesAction(ProductID));
+        } 
     }
 };
 
 const FetchProductsStylesContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)( ProductOverview );
+)( FetchProductStyles );
 
 export default FetchProductsStylesContainer;

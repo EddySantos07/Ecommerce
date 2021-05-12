@@ -5,14 +5,15 @@ import ProductOverview from "../../../../Components/ProductOverview/ProductOverv
 const mapStateToProps = (state) => {
   return {
     Products: state.Products,
+    ProductStyles: state.ProductStyles,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {};
+// const mapDispatchToProps = (dispatch) => {};
 
 const ProductOverviewContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(ProductOverview);
 
 export default ProductOverviewContainer;

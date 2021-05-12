@@ -5,10 +5,17 @@ import MainImageGalleryContainer from "./components/MainImageGalleryContainer/Ma
 
 const ProductOverview = (props) => {
   let { Products } = props;
+  let { ProductStyles } = props;
 
   return (
     <div className="ProductOverviewContainer">
-      <MainImageGalleryContainer Products={Products}/>
+      <MainImageGalleryContainer
+        ProductStyles={
+          Object.keys(ProductStyles).length > 0
+            ? ProductStyles
+            : { DefaultProp: true, ProductStyles: { data: { results: [] } } }
+        }
+      />
 
       <div className="ReviewsContainer">ReviewsContainer</div>
       <div className="StyleNameContainer">StyleNameContainer</div>

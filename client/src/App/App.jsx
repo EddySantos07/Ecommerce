@@ -1,7 +1,7 @@
 import React from "react";
 
 import FetchProductsContainer from "./Redux/Containers/FetchProductContainer/FetchProductContainer";
-import FetchProductsStylesContainer from './Redux/Containers/'
+import FetchProductsStylesContainer from './Redux/Containers/FetchProductsStylesContainer/FetchProductsStylesContainer'
 
 
 import Header from "./Components/Header/Header";
