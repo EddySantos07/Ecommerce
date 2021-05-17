@@ -3,7 +3,7 @@
 .App {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: auto, repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
@@ -12,22 +12,37 @@
 
 /* ///////////// */
 
-/* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP */
-.div1 { grid-area: 1 / 1 / 2 / 2; }
-.div2 { grid-area: 2 / 1 / 3 / 2; }
-.div3 { grid-area: 3 / 1 / 4 / 2; }
-.div4 { grid-area: 4 / 1 / 5 / 2; }
-.div5 { grid-area: 5 / 1 / 6 / 2; }
-.div6 { grid-area: 6 / 1 / 7 / 2; }
-/* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP */
+/* WHOLE APP */
+/* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP */
+.HeaderContainer {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.ProductOverviewContainer {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.div3 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.div4 {
+  grid-area: 4 / 1 / 5 / 2;
+}
+.div5 {
+  grid-area: 5 / 1 / 6 / 2;
+}
+.div6 {
+  grid-area: 6 / 1 / 7 / 2;
+}
+/* WHOLE APP */
+
+/* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP */
 
 /* Header */
 
-.HeaderContainer {
-  max-height: 5%;
+/* .HeaderContainer {
+  max-height: 2%;
   padding-top: 10px;
   padding-bottom: 10px;
-}
+} */
 
 /* /////////////////////// */
 
@@ -65,4 +80,16 @@
   grid-area: 8 / 1 / 10 / 3;
 }
 
+.MainThumbNails {
+  width: 80px;
+  height: 80px;
+}
+
+.MainGalleryThumbNail {
+  width: 100px;
+  height: 100px;
+}
+
 /* Product overview main compoent*/
+
+
