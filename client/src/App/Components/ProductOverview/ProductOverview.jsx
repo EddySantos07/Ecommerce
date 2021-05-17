@@ -7,15 +7,16 @@ const ProductOverview = (props) => {
   let { Products } = props;
   let { ProductStyles } = props;
 
+  if (Object.keys(ProductStyles).length == 0) {
+    ProductStyles = {
+      DefaultProp: true,
+      ProductStyles: { data: { results: [false] } },
+    };
+  }
+
   return (
     <div className="ProductOverviewContainer">
-      <MainImageGalleryContainer
-        ProductStyles={
-          Object.keys(ProductStyles).length > 0
-            ? ProductStyles
-            : { DefaultProp: true, ProductStyles: { data: { results: [] } } }
-        }
-      />
+      <MainImageGalleryContainer ProductStyles={ProductStyles} />
 
       <div className="ReviewsContainer">ReviewsContainer</div>
       <div className="StyleNameContainer">StyleNameContainer</div>

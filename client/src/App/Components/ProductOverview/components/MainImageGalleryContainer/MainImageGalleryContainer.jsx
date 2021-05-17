@@ -1,3 +1,4 @@
+import { map } from "lodash";
 import React, { useState, useEffect } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 
@@ -10,24 +11,36 @@ const MainImages = (styles) => {
     }
   });
 
-  console.log(main);
-  return <div></div>;
+  let { photos } = main[0];
+
+  return (
+    <>
+      <div className="thumbnail_url_container">
+        {photos.map((element) => {
+          return (
+            <div>
+              <img src={element.thumbnail_url}></img>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
 };
 
 const MainImageGalleryContainer = (props) => {
+  // console.log(props, 'props')
 
-  if (props.DefaultProp) {
-    return <div> Default Prop is active </div>
+  if (props.ProductStyles.DefaultProp) {
+    return <div> Default Prop is active </div>;
   }
 
-  console.log(props)
-
-  // let styles = props.ProductStyles.data.results || [];
+  let styles = props.ProductStyles.data.results;
 
   return (
     <div className="MainImageGalleryContainer">
       container
-      {/* {MainImages(styles)} */}
+      {MainImages(styles)}
       <div className="MainImageGallery"></div>
       <div></div>
     </div>

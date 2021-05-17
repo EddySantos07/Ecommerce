@@ -12,6 +12,25 @@
 
 /* ///////////// */
 
+/* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP */
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 2 / 1 / 3 / 2; }
+.div3 { grid-area: 3 / 1 / 4 / 2; }
+.div4 { grid-area: 4 / 1 / 5 / 2; }
+.div5 { grid-area: 5 / 1 / 6 / 2; }
+.div6 { grid-area: 6 / 1 / 7 / 2; }
+/* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP *//* WHOLE APP */
+
+/* Header */
+
+.HeaderContainer {
+  max-height: 5%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* /////////////////////// */
+
 /* Product overview main compoent*/
 .ProductOverviewContainer {
   display: grid;
