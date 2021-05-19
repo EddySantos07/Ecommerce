@@ -37,7 +37,7 @@ const MainImages = (styles) => {
 };
 
 const MainImageGalleryContainer = (props) => {
-  console.log(props, 'props')
+  // console.log(props, 'props')
 
   if (Object.keys(props.ProductStyles).length === 0 ) {
     return <div> Default Prop is active </div>;

@@ -16,6 +16,17 @@ const FetchProductStylesAction = (productID) => {
           type: "PRODUCTS_STYLE_SUCCESS",
           payload: data,
         });
+
+        let initStyle = data.results.filter( style => {
+          if (style.default === true) {
+            return style;
+          }
+        })
+
+        dispatch({
+          type: "SWITCH_STYLE_GALLERY",
+          payload: initStyle
+        })
       })
       .catch((err) => {
         console.log(err);
