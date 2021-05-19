@@ -2,21 +2,21 @@ import { map } from "lodash";
 import React, { useState, useEffect } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 
-const MainGallery = () => {
-  
+const MainGallery = (styles) => {
+
+  return (<div>
+    
+  </div>)
 }
 
 const MainImages = (styles) => {
-  let not_main = [];
 
   let main = styles.filter((style) => {
     let _default = style["default?"];
 
     if (_default) {
       return style;
-    } else {
-      not_main.push(style);
-    }
+    } 
   });
 
   let { photos } = main[0];
@@ -32,25 +32,14 @@ const MainImages = (styles) => {
           );
         })}
       </div>
-      {/* <div className="MainGalleryConatiner">
-        {not_main.map((element) => {
-          console.log(element)
-          return (
-            <div>
-              <img className="MainGalleryThumbNail" src={element.url}/>
-              
-            </div>
-          );
-        })}
-      </div> */}
     </>
   );
 };
 
 const MainImageGalleryContainer = (props) => {
-  // console.log(props, 'props')
+  console.log(props, 'props')
 
-  if (props.ProductStyles.DefaultProp) {
+  if (Object.keys(props.ProductStyles).length === 0 ) {
     return <div> Default Prop is active </div>;
   }
 
@@ -60,7 +49,7 @@ const MainImageGalleryContainer = (props) => {
     <div className="MainImageGalleryContainer">
       container
       {MainImages(styles)}
-      
+      {MainGallery()}
     </div>
   );
 };

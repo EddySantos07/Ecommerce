@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import MainImageGalleryContainer from "./components/MainImageGalleryContainer/MainImageGalleryContainer";
+import MainImageGallery from "../../Redux/Containers/MainComponents/ProductOverviewContainer/CurrentStyleGalleryContainer/CurrentStyleGalleryContainer";
 
 const ProductOverview = (props) => {
   let { Products } = props;
@@ -16,7 +16,7 @@ const ProductOverview = (props) => {
 
   return (
     <div className="ProductOverviewContainer">
-      <MainImageGalleryContainer ProductStyles={ProductStyles} />
+      <MainImageGallery />
 
       <div className="ReviewsContainer">ReviewsContainer</div>
       <div className="StyleNameContainer">StyleNameContainer</div>
