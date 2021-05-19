@@ -3,20 +3,28 @@ import React, { useState, useEffect } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 
 const MainGallery = (styles) => {
+  let styleUrl = styles.photos[0].url;
 
-  return (<div>
-    
-  </div>)
-}
+  return (
+    <>
+      <div className="LeftArrow">left arrow</div>
+      <div className="MainImg">
+        {" "}
+        <img src={styleUrl} />{" "}
+      </div>
+      <div className="ExpandButton"> expand </div>
+      <div className="RightArrow"> right arrow </div>
+    </>
+  );
+};
 
 const MainImages = (styles) => {
-
   let main = styles.filter((style) => {
     let _default = style["default?"];
 
     if (_default) {
       return style;
-    } 
+    }
   });
 
   let { photos } = main[0];
@@ -39,7 +47,10 @@ const MainImages = (styles) => {
 const MainImageGalleryContainer = (props) => {
   // console.log(props, 'props')
 
-  if (Object.keys(props.ProductStyles).length === 0 ) {
+  if (
+    Object.keys(props.ProductStyles).length === 0 ||
+    Object.keys(props.CurrentStyleGallery).length === 0
+  ) {
     return <div> Default Prop is active </div>;
   }
 
@@ -47,9 +58,8 @@ const MainImageGalleryContainer = (props) => {
 
   return (
     <div className="MainImageGalleryContainer">
-      container
       {MainImages(styles)}
-      {MainGallery()}
+      {MainGallery(props.CurrentStyleGallery)}
     </div>
   );
 };

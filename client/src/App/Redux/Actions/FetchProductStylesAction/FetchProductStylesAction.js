@@ -17,15 +17,15 @@ const FetchProductStylesAction = (productID) => {
           payload: data,
         });
 
-        let initStyle = data.results.filter( style => {
-          if (style.default === true) {
+        let initStyle = data.data.results.filter( style => {
+          if (style["default?"] === true) {
             return style;
           }
         })
-
+        
         dispatch({
           type: "SWITCH_STYLE_GALLERY",
-          payload: initStyle
+          payload: initStyle[0]
         })
       })
       .catch((err) => {
