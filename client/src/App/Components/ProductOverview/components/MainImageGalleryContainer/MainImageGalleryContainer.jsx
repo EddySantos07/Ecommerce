@@ -10,7 +10,7 @@ const MainGallery = (styles) => {
       <div className="LeftArrow">left arrow</div>
       <div className="MainImg">
         {" "}
-        <img src={styleUrl} />{" "}
+        <img className="MainImg" src={styleUrl} />{" "}
       </div>
       <div className="ExpandButton"> expand </div>
       <div className="RightArrow"> right arrow </div>

@@ -18,7 +18,7 @@ const ProductOverview = (props) => {
     <div className="ProductOverviewContainer">
       <MainImageGallery />
 
-      <div className="ReviewsContainer">ReviewsContainer</div>
+      <div className="LinkReviewsContainer">ReviewsContainer</div>
       <div className="StyleNameContainer">StyleNameContainer</div>
       <div className="PriceContainer">PriceContainer</div>
       <div className="ThumbnailStyleSelectorContainer">
