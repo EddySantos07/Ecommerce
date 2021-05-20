@@ -23,8 +23,8 @@ const FetchProductStylesAction = (productID) => {
             return style;
           }
         });
-        
-        initStyle.CurrentStyleIndex = 0;
+
+        initStyle[0].CurrentStyleIndex = 0;
 
         dispatch({
           type: "SWITCH_STYLE_GALLERY",

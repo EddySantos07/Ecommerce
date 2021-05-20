@@ -2,17 +2,20 @@ import { map } from "lodash";
 import React, { useState, useEffect } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 
-const HandleStyleChange = (mainStyle, style_url_obj, ChangeCurrentStyle) => {
+const HandleStyleChange = (
+  mainStyle,
+  style_url_obj,
+  ChangeCurrentStyle,
+  CurrentStyleIndex
+) => {
   // console.log(mainStyle, "you just clicked on a style!", style_url_obj);
 
-  ChangeCurrentStyle({ photos: [style_url_obj] });
+  ChangeCurrentStyle({ photos: [style_url_obj], CurrentStyleIndex });
 };
 
-const HandleStyleSlideChange = (e) => {
-  
-};
+const HandleStyleSlideChange = (e) => {};
 
-const MainGallery = (styles) => {
+const MainGallery = (styles, CurrentStyleIndex) => {
   let styleUrl = styles.photos[0].url;
 
   return (
@@ -20,13 +23,12 @@ const MainGallery = (styles) => {
       <div
         className="LeftArrow"
         onClick={(styles) => {
-          HandleStyleSlideChange(e);
+          HandleStyleSlideChange(styles, CurrentStyleIndex);
         }}
       >
         left arrow
       </div>
       <div className="MainImg">
-        
         <img className="MainImg" src={styleUrl} />
       </div>
       <div className="ExpandButton"> expand </div>
@@ -34,7 +36,7 @@ const MainGallery = (styles) => {
       <div
         className="RightArrow"
         onClick={(styles) => {
-          HandleStyleSlideChange(e);
+          HandleStyleSlideChange(styles, CurrentStyleIndex);
         }}
       >
         right arrow
@@ -43,7 +45,7 @@ const MainGallery = (styles) => {
   );
 };
 
-const MainImages = (styles, ChangeCurrentStyle) => {
+const MainImages = (styles, ChangeCurrentStyle, CurrentStyleIndex) => {
   let main = styles.filter((style) => {
     let _default = style["default?"];
 
@@ -65,7 +67,12 @@ const MainImages = (styles, ChangeCurrentStyle) => {
                 className="MainThumbNails"
                 src={element.thumbnail_url}
                 onClick={() => {
-                  HandleStyleChange(main, element, ChangeCurrentStyle);
+                  HandleStyleChange(
+                    main,
+                    element,
+                    ChangeCurrentStyle,
+                    CurrentStyleIndex
+                  );
                 }}
               />
             </div>
@@ -86,12 +93,15 @@ const MainImageGalleryContainer = (props) => {
 
   let styles = props.ProductStyles.data.results;
 
-  let { ChangeCurrentStyleGallery, CurrentStyleGallery } = props;
+  let { ChangeCurrentStyleGallery, CurrentStyleGallery, CurrentStyleIndex } =
+    props;
+
+  // console.log(CurrentStyleGallery);
 
   return (
     <div className="MainImageGalleryContainer">
-      {MainImages(styles, ChangeCurrentStyleGallery)}
-      {MainGallery(CurrentStyleGallery)}
+      {MainGallery(CurrentStyleGallery, CurrentStyleIndex)}
+      {MainImages(styles, ChangeCurrentStyleGallery, CurrentStyleIndex)}
     </div>
   );
 };
