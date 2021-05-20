@@ -20,10 +20,6 @@
   transform: translate( -50%, -50% );
 } */
 
-/* the whole app layout  */
-
-/* ///////////// */
-
 /* WHOLE APP */
 /* WHOLE APP */
 /* WHOLE APP */
@@ -50,7 +46,9 @@
 .FooterContainer {
   grid-area: 6 / 1 / 7 / 2;
 }
-/* WHOLE APP */
+/* WHOLE APP END */
+/* WHOLE APP END */
+/* WHOLE APP END */
 
 /* Header */
 
@@ -64,7 +62,6 @@
 
 /* Product overview main compoent*/
 .ProductOverviewContainer {
-  
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(9, 1fr);
@@ -79,33 +76,31 @@
 }
 
 .MainImageGalleryContainer {
-
   display: grid;
-  grid-template-columns: 3fr 2fr 11fr 2fr 1fr;
+  grid-template-columns: 3fr 2fr 11fr 1fr 2fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-
 }
-/*
+
 .thumbnail_url_container {
   grid-area: 1 / 1 / 2 / 2;
 }
-.LeftArrow {
-  grid-area: 1 / 2 / 2 / 3; */
-/* } */
-/* .MainImg {
-  grid-area: 1 / 3 / 2 / 4; */
 
-/* padding-left: 8%;
-  padding-right: 8%; */
-/* } */
-/* .ExpandButton {
+.LeftArrow {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.MainImg {
+  grid-area: 1 / 3 / 2 / 4; 
+
+}
+
+.ExpandButton {
   grid-area: 1 / 4 / 2 / 5;
 }
 .RightArrow {
   grid-area: 1 / 5 / 2 / 6;
-} */
+} 
 
 /*END OF MainImageGalleryContainer PARENT ///////////////*/
 
@@ -133,17 +128,17 @@
 }
 .StyleInfoContainer {
   grid-area: 8 / 1 / 10 / 3;
-} 
+}
 
 .MainThumbNails {
   /* width: 80px;
   height: 80px; */
-  max-width: 100%;
+  max-width: 59%;
+  border-style: solid;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-/* 
-*/
-/* .MainGalleryThumbNail {
-} */
 
 .MainImg {
   max-width: 100%;

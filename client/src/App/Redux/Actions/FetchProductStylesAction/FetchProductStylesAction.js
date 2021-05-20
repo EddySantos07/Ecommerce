@@ -6,23 +6,26 @@ import API_KEY from "../../../../../../config.js";
 const FetchProductStylesAction = (productID) => {
   return (dispatch) => {
     axios
-      .get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${productID}/styles`, {
+      .get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/styles`, {
         headers: {
           Authorization: API_KEY,
         },
       })
       .then((data) => {
+        // console.log(data)
         dispatch({
           type: "PRODUCTS_STYLE_SUCCESS",
           payload: data,
         });
-
+        // console.log(data)
         let initStyle = data.data.results.filter( style => {
           if (style["default?"] === true) {
             return style;
           }
-        })
+        });
         
+        initStyle.CurrentStyleIndex = 0;
+
         dispatch({
           type: "SWITCH_STYLE_GALLERY",
           payload: initStyle[0]
