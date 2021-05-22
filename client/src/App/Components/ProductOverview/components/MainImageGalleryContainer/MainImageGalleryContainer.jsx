@@ -17,40 +17,32 @@ const HandleStyleChange = (
 };
 
 const HandleRightStyleSlideChange = (
-  styles,
-  ChangeCurrentStyle,
-  CurrentStyleIndex
+  stylesObj,
+  ChangeCurrentStyle
 ) => {
-  console.log(CurrentStyleIndex);
-  if (CurrentStyleIndex + 1 > styles.photos.length) {
+  console.log(stylesObj, ChangeCurrentStyle);
+  if (stylesObj.CurrentStyleIndex + 1 > stylesObj.photos.length) {
     return;
   }
 
-  let NewCurrentStyleObj = styles.photos[CurrentStyleIndex + 1];
+  stylesObj.CurrentStyleIndex = CurrentStyleIndex += 1;
+  stylesObj.CurrentStyle = stylesObj.photos[CurrentStyleIndex];
 
-  console.log(NewCurrentStyleObj)
-
-  CurrentStyleIndex = CurrentStyleIndex += 1;
-
-  console.log(CurrentStyleIndex, (CurrentStyleIndex += 1));
-  ChangeCurrentStyle({ photos: [NewCurrentStyleObj], CurrentStyleIndex });
+  ChangeCurrentStyle();
 };
 
 const HandleLeftStyleSlideChange = (
-  styles,
-  ChangeCurrentStyle,
-  CurrentStyleIndex
+  stylesObj,
+  ChangeCurrentStyle
 ) => {
-  if (CurrentStyleIndex - 1 < styles.photos.length) {
+  if (stylesObj.CurrentStyleIndex - 1 < stylesObj.photos.length) {
     return;
   }
 
-  console.log(styles, "styles");
-  let NewCurrentStyleObj = styles.photos[CurrentStyleIndex - 1];
+  stylesObj.CurrentStyleIndex = CurrentStyleIndex -= 1;
+  stylesObj.CurrentStyle = stylesObj.photos[CurrentStyleIndex];
 
-  CurrentStyleIndex = CurrentStyleIndex -= 1;
-
-  ChangeCurrentStyle({ photos: [NewCurrentStyleObj], CurrentStyleIndex });
+  ChangeCurrentStyle();
 };
 
 const MainGallery = (styles, ChangeCurrentStyleGallery, CurrentStyleIndex) => {
@@ -139,7 +131,9 @@ const MainImageGalleryContainer = (props) => {
 
   let styles = props.ProductStyles.data.results;
 
-  let { ChangeCurrentStyleGallery, CurrentStyleGallery, CurrentStyleIndex } = props;
+  let { ChangeCurrentStyleGallery, CurrentStyleGallery } = props;
+
+  let { CurrentStyleIndex } = props.CurrentStyleGallery;
 
   console.log(props);
 
