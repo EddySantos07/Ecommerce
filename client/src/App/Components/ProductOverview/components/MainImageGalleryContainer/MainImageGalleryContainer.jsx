@@ -20,7 +20,7 @@ const HandleRightStyleSlideChange = (
   stylesObj,
   ChangeCurrentStyle
 ) => {
-  console.log(stylesObj, stylesObj.CurrentStyleIndex + 1)
+
   if (stylesObj.CurrentStyleIndex + 1 > stylesObj.photos.length - 1) {
     return;
   }
@@ -35,7 +35,8 @@ const HandleLeftStyleSlideChange = (
   stylesObj,
   ChangeCurrentStyle
 ) => {
-  if (stylesObj.CurrentStyleIndex - 1 < stylesObj.photos.length - 1) {
+  console.log(stylesObj, stylesObj.CurrentStyleIndex - 1)
+  if ( stylesObj.CurrentStyleIndex - 1 < 0) {
     return;
   }
 
