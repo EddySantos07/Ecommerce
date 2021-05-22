@@ -17,6 +17,7 @@ const RootReducer = combineReducers({
 
   OnMountSetCurrentStyle: OnMountSetCurrentStyleReducer
 });
+
 /* CurrentStyleGalleryReducer  -- changes the style when on mount and on click for main gallery!! */
 
 export default RootReducer;

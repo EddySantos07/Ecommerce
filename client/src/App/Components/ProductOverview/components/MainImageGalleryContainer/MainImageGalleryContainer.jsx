@@ -1,4 +1,3 @@
-import { map } from "lodash";
 import React, { useState, useEffect } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 
@@ -8,7 +7,7 @@ const HandleStyleChange = (
   ChangeCurrentStyle,
   CurrentStyleIndex
 ) => {
-  // console.log(stylesObj.photos, CurrentStyleIndex,'?')
+  console.log(stylesObj)
 
   stylesObj.CurrentStyleIndex = CurrentStyleIndex;
   stylesObj.CurrentStyle = stylesObj.photos[CurrentStyleIndex];
@@ -35,7 +34,7 @@ const HandleLeftStyleSlideChange = (
   stylesObj,
   ChangeCurrentStyle
 ) => {
-  console.log(stylesObj, stylesObj.CurrentStyleIndex - 1)
+  // console.log(stylesObj, stylesObj.CurrentStyleIndex - 1)
   if ( stylesObj.CurrentStyleIndex - 1 < 0) {
     return;
   }

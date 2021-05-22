@@ -6,7 +6,7 @@ import API_KEY from "../../../../../../config.js";
 const FetchProductStylesAction = (productID) => {
   return (dispatch) => {
     axios
-      .get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/styles`, {
+      .get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11004/styles`, {
         headers: {
           Authorization: API_KEY,
         },

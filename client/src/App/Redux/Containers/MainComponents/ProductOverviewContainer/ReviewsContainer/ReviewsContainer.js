@@ -1,20 +1,19 @@
 import { connect } from "react-redux";
 
-import ProductOverview from "../../../../Components/ProductOverview/ProductOverview";
+import ReviewsContainer from '../../../../../Components/ProductOverview/components/ReviewsContainer/ReviewsContainer';
 
 const mapStateToProps = (state) => {
   return {
     Products: state.Products,
     ProductStyles: state.ProductStyles,
-    state
   };
 };
 
 // const mapDispatchToProps = (dispatch) => {};
 
-const ProductOverviewContainer = connect(
+const LinkReviewContainer = connect(
   mapStateToProps,
   null
-)(ProductOverview);
+)(ReviewsContainer);
 
-export default ProductOverviewContainer;
+export default LinkReviewContainer;
