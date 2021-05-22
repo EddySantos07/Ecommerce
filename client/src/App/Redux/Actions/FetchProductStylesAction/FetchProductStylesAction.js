@@ -25,6 +25,7 @@ const FetchProductStylesAction = (productID) => {
         });
 
         initStyle[0].CurrentStyleIndex = 0;
+        initStyle[0].CurrentStyle = initStyle[0].photos[0];
 
         dispatch({
           type: "SWITCH_STYLE_GALLERY",
