@@ -3,27 +3,69 @@ import React, { useState, useEffect } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 
 const HandleStyleChange = (
-  mainStyle,
+  stylesObj,
   style_url_obj,
   ChangeCurrentStyle,
   CurrentStyleIndex
 ) => {
-  // console.log(mainStyle, "you just clicked on a style!", style_url_obj);
+  // console.log(stylesObj.photos, CurrentStyleIndex,'?')
 
-  ChangeCurrentStyle({ photos: [style_url_obj], CurrentStyleIndex });
+  stylesObj.CurrentStyleIndex = CurrentStyleIndex;
+  stylesObj.CurrentStyle = stylesObj.photos[CurrentStyleIndex];
+
+  ChangeCurrentStyle(stylesObj);
 };
 
-const HandleStyleSlideChange = (e) => {};
+const HandleRightStyleSlideChange = (
+  styles,
+  ChangeCurrentStyle,
+  CurrentStyleIndex
+) => {
+  console.log(CurrentStyleIndex);
+  if (CurrentStyleIndex + 1 > styles.photos.length) {
+    return;
+  }
 
-const MainGallery = (styles, CurrentStyleIndex) => {
+  let NewCurrentStyleObj = styles.photos[CurrentStyleIndex + 1];
+
+  console.log(NewCurrentStyleObj)
+
+  CurrentStyleIndex = CurrentStyleIndex += 1;
+
+  console.log(CurrentStyleIndex, (CurrentStyleIndex += 1));
+  ChangeCurrentStyle({ photos: [NewCurrentStyleObj], CurrentStyleIndex });
+};
+
+const HandleLeftStyleSlideChange = (
+  styles,
+  ChangeCurrentStyle,
+  CurrentStyleIndex
+) => {
+  if (CurrentStyleIndex - 1 < styles.photos.length) {
+    return;
+  }
+
+  console.log(styles, "styles");
+  let NewCurrentStyleObj = styles.photos[CurrentStyleIndex - 1];
+
+  CurrentStyleIndex = CurrentStyleIndex -= 1;
+
+  ChangeCurrentStyle({ photos: [NewCurrentStyleObj], CurrentStyleIndex });
+};
+
+const MainGallery = (styles, ChangeCurrentStyleGallery, CurrentStyleIndex) => {
   let styleUrl = styles.photos[0].url;
 
   return (
     <>
       <div
         className="LeftArrow"
-        onClick={(styles) => {
-          HandleStyleSlideChange(styles, CurrentStyleIndex);
+        onClick={() => {
+          HandleLeftStyleSlideChange(
+            styles,
+            ChangeCurrentStyleGallery,
+            CurrentStyleIndex
+          );
         }}
       >
         left arrow
@@ -35,8 +77,12 @@ const MainGallery = (styles, CurrentStyleIndex) => {
 
       <div
         className="RightArrow"
-        onClick={(styles) => {
-          HandleStyleSlideChange(styles, CurrentStyleIndex);
+        onClick={() => {
+          HandleRightStyleSlideChange(
+            styles,
+            ChangeCurrentStyleGallery,
+            CurrentStyleIndex
+          );
         }}
       >
         right arrow
@@ -61,17 +107,17 @@ const MainImages = (styles, ChangeCurrentStyle, CurrentStyleIndex) => {
       <div className="thumbnail_url_container">
         {photos.map((element, index) => {
           return (
-            <div>
+            <div key={index}>
               <img
                 key={index}
                 className="MainThumbNails"
                 src={element.thumbnail_url}
                 onClick={() => {
                   HandleStyleChange(
-                    main,
+                    main[0],
                     element,
                     ChangeCurrentStyle,
-                    CurrentStyleIndex
+                    index
                   );
                 }}
               />
@@ -93,14 +139,17 @@ const MainImageGalleryContainer = (props) => {
 
   let styles = props.ProductStyles.data.results;
 
-  let { ChangeCurrentStyleGallery, CurrentStyleGallery, CurrentStyleIndex } =
-    props;
+  let { ChangeCurrentStyleGallery, CurrentStyleGallery, CurrentStyleIndex } = props;
 
-  // console.log(CurrentStyleGallery);
+  console.log(props);
 
   return (
     <div className="MainImageGalleryContainer">
-      {MainGallery(CurrentStyleGallery, CurrentStyleIndex)}
+      {MainGallery(
+        CurrentStyleGallery,
+        ChangeCurrentStyleGallery,
+        CurrentStyleIndex
+      )}
       {MainImages(styles, ChangeCurrentStyleGallery, CurrentStyleIndex)}
     </div>
   );
