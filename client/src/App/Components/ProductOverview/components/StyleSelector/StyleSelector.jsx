@@ -6,21 +6,17 @@ const HandleThumbnailStyleChange = (
   index,
   ChangeCurrentStyleGallery
 ) => {
-  console.log(MainCurrentStyleObj, index);
-
   MainCurrentStyleObj.CurrentIndex = index;
 
-  let StartingPhoto = MainCurrentStyleObj.data.data.results[index].photos[0]
-
-  console.log(MainCurrentStyleObj.data.data.results[index], '?')
+  let StartingPhoto = MainCurrentStyleObj.data.data.results[index].photos[0];
 
   ChangeCurrentStyleGallery({
     CurrentStyle: StartingPhoto,
     CurrentStyleIndex: 0,
-    ...MainCurrentStyleObj.data.data.results[index]
-  })
+    ...MainCurrentStyleObj.data.data.results[index],
+  });
 
-  SetMainCurrentStyle( MainCurrentStyleObj );
+  SetMainCurrentStyle(MainCurrentStyleObj);
 };
 
 const StyleSelector = ({

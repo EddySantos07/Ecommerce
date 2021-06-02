@@ -77,19 +77,6 @@ const MainGallery = (styles, ChangeCurrentStyleGallery, CurrentStyleIndex) => {
 };
 
 const MainImages = (style, ChangeCurrentStyle, CurrentStyleIndex) => {
-
-  // console.log(styles, 'new styles')
-  // let main = styles.filter((style) => {
-  //   let _default = style["default?"];
-
-  //   if (_default) {
-  //     return style;
-  //   }
-  // });
-
-  // let { photos } = main[0];
-  console.log(style.photos, 'photos??')
-
   return (
     <>
       <div className="thumbnail_url_container">
@@ -101,12 +88,7 @@ const MainImages = (style, ChangeCurrentStyle, CurrentStyleIndex) => {
                 className="MainThumbNails"
                 src={element.thumbnail_url}
                 onClick={() => {
-                  HandleStyleChange(
-                    style,
-                    element,
-                    ChangeCurrentStyle,
-                    index
-                  );
+                  HandleStyleChange(style, element, ChangeCurrentStyle, index);
                 }}
               />
             </div>
@@ -125,13 +107,12 @@ const MainImageGalleryContainer = (props) => {
     return <div> Default Prop is active </div>;
   }
 
-  let styles = props.ProductStyles.data.results;
-
-  let { ChangeCurrentStyleGallery, CurrentStyleGallery, MainCurrentStyle } = props;
+  let { ChangeCurrentStyleGallery, CurrentStyleGallery, MainCurrentStyle } =
+    props;
 
   let { CurrentStyleIndex } = props.CurrentStyleGallery;
 
-  useEffect( () => {}, [ props.CurrentStyleGallery] );
+  useEffect(() => {}, [props.CurrentStyleGallery]);
 
   return (
     <div className="MainImageGalleryContainer">
@@ -140,7 +121,11 @@ const MainImageGalleryContainer = (props) => {
         ChangeCurrentStyleGallery,
         CurrentStyleIndex
       )}
-      {MainImages(CurrentStyleGallery, ChangeCurrentStyleGallery, CurrentStyleIndex)}
+      {MainImages(
+        CurrentStyleGallery,
+        ChangeCurrentStyleGallery,
+        CurrentStyleIndex
+      )}
     </div>
   );
 };

@@ -43,8 +43,6 @@ const ProductOverview = (props) => {
 
   let { CurrentStyleGallery } = props.state;
 
-  // console.log(ProductStyles, "product styles");
-
   return (
     <div className="ProductOverviewContainer">
       <MainImageGallery />
