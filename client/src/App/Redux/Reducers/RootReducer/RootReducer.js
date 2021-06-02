@@ -6,7 +6,7 @@ import FetchProductStylesReducer from '../FetchProductStylesReducer/FetchProduct
 
 import CurrentStyleGalleryReducer from '../CurrentStyleGalleryReducer/CurrentStyleGalleryReducer';
 
-import OnMountSetCurrentStyleReducer from '../OnMountSetCurrentStyleReducer/OnMountSetCurrentStyleReducer';
+import SetMainStyleReducer from '../SetMainStyleReducer/SetMainStyleReducer';
 const RootReducer = combineReducers({
   Products: FetchProductsReducer,
   ProductStyles: FetchProductStylesReducer,
@@ -15,7 +15,7 @@ const RootReducer = combineReducers({
 
   CurrentStyleGallery: CurrentStyleGalleryReducer,
 
-  ChangeMainCurrentStyle: OnMountSetCurrentStyleReducer
+  MainCurrentStyle: SetMainStyleReducer
 });
 
 /* CurrentStyleGalleryReducer  -- changes the style when on mount and on click for main gallery!! */

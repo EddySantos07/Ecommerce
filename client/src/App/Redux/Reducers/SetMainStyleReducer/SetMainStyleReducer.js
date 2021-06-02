@@ -1,4 +1,4 @@
-const OnMountSetCurrentStyleReducer = (state = {}, action) => {
+const SetMainStyleReducer = (state = {}, action) => {
   switch (action.type) {
     case "SET_CURRENT_MAIN_STYLE":
       return { ...action.payload };
@@ -7,4 +7,4 @@ const OnMountSetCurrentStyleReducer = (state = {}, action) => {
   }
 };
 
-export default OnMountSetCurrentStyleReducer;
+export default SetMainStyleReducer;

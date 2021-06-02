@@ -16,7 +16,13 @@ const filterProducts = (Products, ProductStyles) => {
 };
 
 const ProductOverview = (props) => {
-  let { Products, ProductStyles, ChangeCurrentStyleGallery, state } = props;
+  let {
+    Products,
+    ProductStyles,
+    ChangeCurrentStyleGallery,
+    state,
+    MainCurrentStyle,
+  } = props;
 
   let productInfo;
 
@@ -36,7 +42,7 @@ const ProductOverview = (props) => {
 
   let { CurrentStyleGallery } = props.state;
 
-  console.log(ProductStyles, 'product styles')
+  console.log(ProductStyles, "product styles");
 
   return (
     <div className="ProductOverviewContainer">
@@ -57,6 +63,7 @@ const ProductOverview = (props) => {
         ProductStyles={ProductStyles}
         CurrentStyleGallery={CurrentStyleGallery}
         ChangeCurrentStyleGallery={ChangeCurrentStyleGallery}
+        MainCurrentStyle={MainCurrentStyle}
       />
       <div className="SelectSizeContainer">SelectSizeContainer</div>
       <div className="AddToCartContainer">AddToCartContainer</div>
