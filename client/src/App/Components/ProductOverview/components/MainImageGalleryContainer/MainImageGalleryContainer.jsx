@@ -76,7 +76,7 @@ const MainGallery = (styles, ChangeCurrentStyleGallery, CurrentStyleIndex) => {
   );
 };
 
-const MainImages = (photos, ChangeCurrentStyle, CurrentStyleIndex) => {
+const MainImages = (style, ChangeCurrentStyle, CurrentStyleIndex) => {
 
   // console.log(styles, 'new styles')
   // let main = styles.filter((style) => {
@@ -88,12 +88,12 @@ const MainImages = (photos, ChangeCurrentStyle, CurrentStyleIndex) => {
   // });
 
   // let { photos } = main[0];
-  console.log(photos.photos, 'photos??')
+  console.log(style.photos, 'photos??')
 
   return (
     <>
       <div className="thumbnail_url_container">
-        {photos.photos.map((element, index) => {
+        {style.photos.map((element, index) => {
           return (
             <div key={index}>
               <img
@@ -102,7 +102,7 @@ const MainImages = (photos, ChangeCurrentStyle, CurrentStyleIndex) => {
                 src={element.thumbnail_url}
                 onClick={() => {
                   HandleStyleChange(
-                    main[0],
+                    style,
                     element,
                     ChangeCurrentStyle,
                     index
