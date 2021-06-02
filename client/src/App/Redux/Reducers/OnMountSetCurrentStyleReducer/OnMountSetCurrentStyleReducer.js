@@ -1,6 +1,6 @@
 const OnMountSetCurrentStyleReducer = (state = {}, action) => {
   switch (action.type) {
-    case "SET_CURRENT_STYLE_MOUNT":
+    case "SET_CURRENT_MAIN_STYLE":
       return { ...action.payload };
     default:
       return state;

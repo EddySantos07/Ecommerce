@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 
 import ProductOverview from "../../../../Components/ProductOverview/ProductOverview";
+import CurrentStyleGalleryAction from '../../../Actions/CurrentStyleGalleryAction/CurrentStyleGalleryAction';
 
 const mapStateToProps = (state) => {
   return {
@@ -10,11 +11,17 @@ const mapStateToProps = (state) => {
   };
 };
 
-// const mapDispatchToProps = (dispatch) => {};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    ChangeCurrentStyleGallery: (style) => {
+      dispatch(CurrentStyleGalleryAction(style));
+    }
+  };
+};
 
 const ProductOverviewContainer = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(ProductOverview);
 
 export default ProductOverviewContainer;

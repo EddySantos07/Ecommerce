@@ -5,6 +5,7 @@ import MainImageGallery from "../../Redux/Containers/MainComponents/ProductOverv
 import LinkReviewsContainer from "../../Redux/Containers/MainComponents/ProductOverviewContainer/ReviewsContainer/ReviewsContainer";
 import StyleName from "./components/StyleName/StyleName";
 import PriceContainer from "./components/PriceContainer/PriceContainer";
+import StyleSelector from "./components/StyleSelector/StyleSelector";
 
 const filterProducts = (Products, ProductStyles) => {
   return Products.data.filter((Product) => {
@@ -15,8 +16,7 @@ const filterProducts = (Products, ProductStyles) => {
 };
 
 const ProductOverview = (props) => {
-  let { Products } = props;
-  let { ProductStyles } = props;
+  let { Products, ProductStyles, ChangeCurrentStyleGallery, state } = props;
 
   let productInfo;
 
@@ -36,6 +36,8 @@ const ProductOverview = (props) => {
 
   let { CurrentStyleGallery } = props.state;
 
+  console.log(ProductStyles, 'product styles')
+
   return (
     <div className="ProductOverviewContainer">
       <MainImageGallery />
@@ -50,9 +52,12 @@ const ProductOverview = (props) => {
         CurrentStyleGallery={CurrentStyleGallery}
       />
 
-      <div className="ThumbnailStyleSelectorContainer">
-        ThumbnailStyleSelectorContainer
-      </div>
+      <StyleSelector
+        productInfo={productInfo}
+        ProductStyles={ProductStyles}
+        CurrentStyleGallery={CurrentStyleGallery}
+        ChangeCurrentStyleGallery={ChangeCurrentStyleGallery}
+      />
       <div className="SelectSizeContainer">SelectSizeContainer</div>
       <div className="AddToCartContainer">AddToCartContainer</div>
       <div className="StyleInfoContainer">StyleInfoContainer</div>

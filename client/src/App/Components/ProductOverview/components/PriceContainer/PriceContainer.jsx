@@ -2,7 +2,6 @@ import React from "react";
 
 const filterPrice = ([ProductInfo], CurrentStyle) => {
   if (typeof CurrentStyle.sale_price === "number") {
-    console.log(CurrentStyle.sale_price, "in if");
     return (
       <div>
         <h3> Sale Price: {CurrentStyle.sale_price} </h3>

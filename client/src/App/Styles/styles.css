@@ -64,7 +64,7 @@
 .ProductOverviewContainer {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-rows: 1fr, auto, repeat(7, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   max-width: 100%;
@@ -91,8 +91,7 @@
   grid-area: 1 / 2 / 2 / 3;
 }
 .MainImg {
-  grid-area: 1 / 3 / 2 / 4; 
-
+  grid-area: 1 / 3 / 2 / 4;
 }
 
 .ExpandButton {
@@ -100,13 +99,14 @@
 }
 .RightArrow {
   grid-area: 1 / 5 / 2 / 6;
-} 
+}
 
 /*END OF MainImageGalleryContainer PARENT ///////////////*/
 
 .LinkReviewsContainer {
   grid-area: 1 / 2 / 2 / 3;
 }
+
 
 .StyleNameContainer {
   grid-area: 2 / 2 / 3 / 3;
@@ -116,9 +116,35 @@
   grid-area: 3 / 2 / 4 / 3;
 }
 
+/*  */
 .ThumbnailStyleSelectorContainer {
   grid-area: 4 / 2 / 6 / 3;
 }
+.ThumbnailStyleSelectorContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+/* .Select_ThumbNail_Styles_Div {
+  max-width: 40%;
+  max-height: 40%;
+  border-radius: 50%;
+} */
+
+
+.Select_ThumbNail_Style_Img {
+
+  margin: 0 auto;
+
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+/*  */
 
 .SelectSizeContainer {
   grid-area: 6 / 2 / 7 / 3;

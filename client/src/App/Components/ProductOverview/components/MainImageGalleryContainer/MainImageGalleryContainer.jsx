@@ -7,7 +7,7 @@ const HandleStyleChange = (
   ChangeCurrentStyle,
   CurrentStyleIndex
 ) => {
-  console.log(stylesObj)
+  // console.log(stylesObj)
 
   stylesObj.CurrentStyleIndex = CurrentStyleIndex;
   stylesObj.CurrentStyle = stylesObj.photos[CurrentStyleIndex];
