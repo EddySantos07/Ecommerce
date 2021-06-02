@@ -43,34 +43,34 @@ const MainGallery = (styles, ChangeCurrentStyleGallery, CurrentStyleIndex) => {
 
   return (
     <>
-      <div
-        className="LeftArrow"
-        onClick={() => {
-          HandleLeftStyleSlideChange(
-            styles,
-            ChangeCurrentStyleGallery,
-            CurrentStyleIndex
-          );
-        }}
-      >
-        left arrow
+      <div className="LeftArrowContainer">
+        <div
+          className="arrow LeftArrow"
+          onClick={() => {
+            HandleLeftStyleSlideChange(
+              styles,
+              ChangeCurrentStyleGallery,
+              CurrentStyleIndex
+            );
+          }}
+        ></div>
       </div>
       <div className="MainImg">
         <img className="MainImg" src={styleUrl} />
       </div>
       <div className="ExpandButton"> expand </div>
 
-      <div
-        className="RightArrow"
-        onClick={() => {
-          HandleRightStyleSlideChange(
-            styles,
-            ChangeCurrentStyleGallery,
-            CurrentStyleIndex
-          );
-        }}
-      >
-        right arrow
+      <div className="RightArrowContainer">
+        <div
+          className="arrow RightArrow"
+          onClick={() => {
+            HandleRightStyleSlideChange(
+              styles,
+              ChangeCurrentStyleGallery,
+              CurrentStyleIndex
+            );
+          }}
+        ></div>
       </div>
     </>
   );
