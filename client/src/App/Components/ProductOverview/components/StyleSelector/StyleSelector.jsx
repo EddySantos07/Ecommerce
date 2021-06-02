@@ -1,18 +1,36 @@
 import React from "react";
 
-const HandleThumbnailStyleChange = (  stylesObj, ChangeCurrentStyle) => {
-  console.log(  stylesObj, ' style')
+const HandleThumbnailStyleChange = (
+  MainCurrentStyleObj,
+  SetMainCurrentStyle,
+  index,
+  ChangeCurrentStyleGallery
+) => {
+  console.log(MainCurrentStyleObj, index);
 
-  let CurrentStyleIndex = 0; 
+  MainCurrentStyleObj.CurrentIndex = index;
 
-  stylesObj.CurrentStyleIndex = CurrentStyleIndex;
-  stylesObj.CurrentStyle = stylesObj.photos[CurrentStyleIndex];
+  let StartingPhoto = MainCurrentStyleObj.data.data.results[index].photos[0]
 
-  ChangeCurrentStyle(stylesObj);
+  console.log(MainCurrentStyleObj.data.data.results[index], '?')
 
+  ChangeCurrentStyleGallery({
+    CurrentStyle: StartingPhoto,
+    CurrentStyleIndex: 0,
+    ...MainCurrentStyleObj.data.data.results[index]
+  })
+
+  SetMainCurrentStyle( MainCurrentStyleObj );
 };
 
-const StyleSelector = ({ productInfo, ProductStyles, CurrentStyleGallery, ChangeCurrentStyleGallery }) => {
+const StyleSelector = ({
+  productInfo,
+  ProductStyles,
+  CurrentStyleGallery,
+  ChangeCurrentStyleGallery,
+  MainCurrentStyle,
+  SetMainStyle,
+}) => {
   if (
     productInfo === undefined ||
     ProductStyles === undefined ||
@@ -25,8 +43,6 @@ const StyleSelector = ({ productInfo, ProductStyles, CurrentStyleGallery, Change
     );
   }
 
-
-
   let FilteredProductStyles = ProductStyles.data.results.filter(
     (style, index) => {
       if (index !== 7) {
@@ -38,7 +54,7 @@ const StyleSelector = ({ productInfo, ProductStyles, CurrentStyleGallery, Change
 
   return (
     <div className="ThumbnailStyleSelectorContainer Select_ThumbNail_Styles">
-      {FilteredProductStyles.map((Style) => {
+      {FilteredProductStyles.map((Style, index) => {
         let { thumbnail_url } = Style.photos[0];
 
         return (
@@ -47,7 +63,12 @@ const StyleSelector = ({ productInfo, ProductStyles, CurrentStyleGallery, Change
               className="Select_ThumbNail_Style_Img"
               src={thumbnail_url}
               onClick={() => {
-                HandleThumbnailStyleChange(Style, ChangeCurrentStyleGallery);
+                HandleThumbnailStyleChange(
+                  MainCurrentStyle,
+                  SetMainStyle,
+                  index,
+                  ChangeCurrentStyleGallery
+                );
               }}
             />
           </div>

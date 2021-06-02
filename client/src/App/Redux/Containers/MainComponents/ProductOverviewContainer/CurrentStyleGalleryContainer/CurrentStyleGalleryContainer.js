@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
   return  {
     CurrentStyleGallery: state.CurrentStyleGallery,
     ProductStyles: state.ProductStyles,
+    MainCurrentStyle: state.MainCurrentStyle
   }
 }
 

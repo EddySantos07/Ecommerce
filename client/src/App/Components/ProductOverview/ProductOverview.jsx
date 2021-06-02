@@ -22,6 +22,7 @@ const ProductOverview = (props) => {
     ChangeCurrentStyleGallery,
     state,
     MainCurrentStyle,
+    SetMainStyle
   } = props;
 
   let productInfo;
@@ -42,7 +43,7 @@ const ProductOverview = (props) => {
 
   let { CurrentStyleGallery } = props.state;
 
-  console.log(ProductStyles, "product styles");
+  // console.log(ProductStyles, "product styles");
 
   return (
     <div className="ProductOverviewContainer">
@@ -64,6 +65,7 @@ const ProductOverview = (props) => {
         CurrentStyleGallery={CurrentStyleGallery}
         ChangeCurrentStyleGallery={ChangeCurrentStyleGallery}
         MainCurrentStyle={MainCurrentStyle}
+        SetMainStyle={SetMainStyle}
       />
       <div className="SelectSizeContainer">SelectSizeContainer</div>
       <div className="AddToCartContainer">AddToCartContainer</div>
