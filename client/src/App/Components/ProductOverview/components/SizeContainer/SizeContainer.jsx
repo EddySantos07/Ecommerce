@@ -1,21 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-const HandleOpenDropDown = (open, arraySkus) => {
-  if (!open) {
-    arraySkus.map((sku, index) => {
-      let key = Object.keys(sku);
-
-      let { quantity, size } = sku[key];
-
-      console.log(sku);
-
-      return <div key={index}> {size} </div>;
-      setCloseOrOpenDropDown(!open);
-    });
-  }
-  return;
-};
-
 const SizeContainer = ({
   productInfo,
   ProductStyles,
@@ -52,23 +36,47 @@ const SizeContainer = ({
   // console.log(arraySkus)
 
   let [openOrCloseDropDown, setCloseOrOpenDropDown] = useState(false);
+  let [CurrentSizeQuantity, setQuantity] = useState("Quantity");
 
   return (
     <>
       <div className="SelectSizeContainer">
-        Select Size:
         <button
           onClick={() => {
-            HandleOpenDropDown(
-              openOrCloseDropDown,
-              arraySkus,
-              setCloseOrOpenDropDown
-            );
+            setCloseOrOpenDropDown(!openOrCloseDropDown);
           }}
-        ></button>
+        >
+          Select Size{" "}
+        </button>
 
-          
+        {openOrCloseDropDown ? (
+          arraySkus.map((sku, index) => {
+            let key = Object.keys(sku);
 
+            let { quantity, size } = sku[key];
+
+            console.log(sku);
+
+            return (
+              <div
+                key={index}
+                onClick={() => {
+                  setQuantity({
+                    min: 0,
+                    max: size,
+                  });
+                }}
+              >
+                {" "}
+                {size}{" "}
+              </div>
+            );
+          })
+        ) : (
+          <div> </div>
+        )}
+
+        <button>- {CurrentSizeQuantity}</button>
       </div>
     </>
   );
