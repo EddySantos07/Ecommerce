@@ -36,7 +36,8 @@ const SizeContainer = ({
   // console.log(arraySkus)
 
   let [openOrCloseDropDown, setCloseOrOpenDropDown] = useState(false);
-  let [CurrentSizeQuantity, setQuantity] = useState("Quantity");
+  let [CurrentSizeQuantity, setQuantity] = useState("");
+  let [trackCurrentSize, setSize] = useState(0);
 
   return (
     <>
@@ -55,15 +56,13 @@ const SizeContainer = ({
 
             let { quantity, size } = sku[key];
 
-            console.log(sku);
-
             return (
               <div
                 key={index}
                 onClick={() => {
                   setQuantity({
                     min: 0,
-                    max: size,
+                    max: quantity,
                   });
                 }}
               >
@@ -76,7 +75,43 @@ const SizeContainer = ({
           <div> </div>
         )}
 
-        <button>- {CurrentSizeQuantity}</button>
+        <div>
+          {" "}
+          - Quantity{" "}
+          {CurrentSizeQuantity.min >= CurrentSizeQuantity.max
+            ? `max quantity - ${CurrentSizeQuantity.max}`
+            : trackCurrentSize}
+          <button
+            onClick={() => {
+              if (
+                trackCurrentSize >= CurrentSizeQuantity.max ||
+                CurrentSizeQuantity.max === undefined
+              ) {
+                return;
+              }
+
+              let incrementSize = (trackCurrentSize += 1);
+              setSize(incrementSize);
+            }}
+          >
+            +
+          </button>
+          <button
+            onClick={() => {
+              if (
+                trackCurrentSize <= CurrentSizeQuantity.min ||
+                CurrentSizeQuantity.max === undefined
+              ) {
+                return;
+              }
+
+              let incrementSize = (trackCurrentSize -= 1);
+              setSize(incrementSize);
+            }}
+          >
+            -
+          </button>
+        </div>
       </div>
     </>
   );
