@@ -6,6 +6,7 @@ import LinkReviewsContainer from "../../Redux/Containers/MainComponents/ProductO
 import StyleName from "./components/StyleName/StyleName";
 import PriceContainer from "./components/PriceContainer/PriceContainer";
 import StyleSelector from "./components/StyleSelector/StyleSelector";
+import SizeContainer from "./components/SizeContainer/SizeContainer";
 
 const filterProducts = (Products, ProductStyles) => {
   return Products.data.filter((Product) => {
@@ -22,7 +23,7 @@ const ProductOverview = (props) => {
     ChangeCurrentStyleGallery,
     state,
     MainCurrentStyle,
-    SetMainStyle
+    SetMainStyle,
   } = props;
 
   let productInfo;
@@ -65,7 +66,12 @@ const ProductOverview = (props) => {
         MainCurrentStyle={MainCurrentStyle}
         SetMainStyle={SetMainStyle}
       />
-      <div className="SelectSizeContainer">SelectSizeContainer</div>
+      <SizeContainer
+        productInfo={productInfo}
+        ProductStyles={ProductStyles}
+        CurrentStyleGallery={CurrentStyleGallery}
+        MainCurrentStyle={MainCurrentStyle}
+      />
       <div className="AddToCartContainer">AddToCartContainer</div>
       <div className="StyleInfoContainer">StyleInfoContainer</div>
     </div>
