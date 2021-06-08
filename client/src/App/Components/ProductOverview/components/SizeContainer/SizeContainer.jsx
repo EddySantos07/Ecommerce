@@ -43,6 +43,7 @@ const SizeContainer = ({
     <>
       <div className="SelectSizeContainer">
         <button
+          className="SelectSizeButton"
           onClick={() => {
             setCloseOrOpenDropDown(!openOrCloseDropDown);
           }}
@@ -50,32 +51,33 @@ const SizeContainer = ({
           Select Size{" "}
         </button>
 
-        {openOrCloseDropDown ? (
-          arraySkus.map((sku, index) => {
-            let key = Object.keys(sku);
+        <div className="SizeContainer">
+          {openOrCloseDropDown ? (
+            arraySkus.map((sku, index) => {
+              let key = Object.keys(sku);
 
-            let { quantity, size } = sku[key];
+              let { quantity, size } = sku[key];
 
-            return (
-              <div
-                key={index}
-                onClick={() => {
-                  setQuantity({
-                    min: 0,
-                    max: quantity,
-                  });
-                }}
-              >
-                {" "}
-                {size}{" "}
-              </div>
-            );
-          })
-        ) : (
-          <div> </div>
-        )}
-
-        <div>
+              return (
+                <div
+                  key={index}
+                  onClick={() => {
+                    setQuantity({
+                      min: 0,
+                      max: quantity,
+                    });
+                  }}
+                >
+                  {" "}
+                  {size}{" "}
+                </div>
+              );
+            })
+          ) : (
+            <div> </div>
+          )}
+        </div>
+        <div className="QuantityButton ">
           {" "}
           - Quantity{" "}
           {CurrentSizeQuantity.min >= CurrentSizeQuantity.max
