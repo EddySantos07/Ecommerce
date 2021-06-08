@@ -64,7 +64,7 @@
 .ProductOverviewContainer {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr, auto, repeat(7, 1fr);
+  grid-template-rows: 1fr, auto, 1fr, auto, auto, auto, repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   max-width: 100%;
@@ -77,7 +77,7 @@
 
 .MainImageGalleryContainer {
   display: grid;
-  grid-template-columns: 3fr 2fr 11fr 1fr 2fr;
+  grid-template-columns: 3fr 2fr 11fr 2fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -92,7 +92,7 @@
 }
 
 .LeftArrowContainer {
-  padding-top: 400%;
+  margin: auto;
 }
 
 .LeftArrow {
@@ -104,20 +104,18 @@
   grid-area: 1 / 3 / 2 / 4;
 }
 
-.ExpandButton {
-  grid-area: 1 / 4 / 2 / 5;
-}
-.RightArrow {
+.ExpandButtonContainer {
   grid-area: 1 / 5 / 2 / 6;
+}
+.RightArrowContainer {
+  grid-area: 1 / 4 / 2 / 5;
 }
 
 .RightArrowContainer {
-  padding-top: 400%;
+  margin: auto;
 }
 
 .RightArrow {
-  padding-top: 50%;
-
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
@@ -167,7 +165,6 @@
   grid-template-rows: auto auto auto;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-
 }
 
 .Select_ThumbNail_Styles_Div {
@@ -177,15 +174,14 @@
 }
 
 .Select_ThumbNail_Style_Img {
-  object-fit:cover;
+  object-fit: cover;
   width: 200px;
   height: 200px;
   border-radius: 50%;
 
   max-height: 60%;
   max-width: 100%;
-} 
-
+}
 
 .SelectSizeContainer {
   grid-area: 6 / 2 / 7 / 3;
@@ -235,7 +231,24 @@
 }
 
 .MainImg {
+  margin: auto;
   max-width: 100%;
+}
+
+.ExpandButtonContainer {
+  margin-top: 60%;
+  /* margin-right: 50%; */
+}
+
+.ExpandButton {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+
+  background: linear-gradient(#000, #000), linear-gradient(#000, #000);
+  background-position: center;
+  background-size: 50% 2px, 2px 50%; /*thickness = 2px, length = 50% (25px)*/
+  background-repeat: no-repeat;
 }
 
 /* Product overview main compoent*/

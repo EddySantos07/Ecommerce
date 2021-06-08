@@ -58,7 +58,10 @@ const MainGallery = (styles, ChangeCurrentStyleGallery, CurrentStyleIndex) => {
       <div className="MainImg">
         <img className="MainImg" src={styleUrl} />
       </div>
-      <div className="ExpandButton"> expand </div>
+      <div className="ExpandButtonContainer">
+        {" "}
+        <div className="ExpandButton"> </div>{" "}
+      </div>
 
       <div className="RightArrowContainer">
         <div
