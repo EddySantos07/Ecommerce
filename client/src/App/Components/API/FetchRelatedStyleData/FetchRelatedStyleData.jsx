@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const FetchQA = (props) => {
+const FetchRelatedStyleData = (props) => {
 
     useEffect( () => {
-        // FetchQA
+        // FetchRelatedStyleData
     },[])
     return <div></div>;
 }
 
-export default FetchQA;
+export default FetchRelatedStyleData;

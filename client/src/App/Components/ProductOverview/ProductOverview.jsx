@@ -7,6 +7,7 @@ import StyleName from "./components/StyleName/StyleName";
 import PriceContainer from "./components/PriceContainer/PriceContainer";
 import StyleSelector from "./components/StyleSelector/StyleSelector";
 import SizeContainer from "./components/SizeContainer/SizeContainer";
+import AddToCartContainer from './components/AddToCartContainer/AddToCartContainer';
 
 const filterProducts = (Products, ProductStyles) => {
   return Products.data.filter((Product) => {
@@ -72,7 +73,7 @@ const ProductOverview = (props) => {
         CurrentStyleGallery={CurrentStyleGallery}
         MainCurrentStyle={MainCurrentStyle}
       />
-      <div className="AddToCartContainer">AddToCartContainer</div>
+      <AddToCartContainer />
       <div className="StyleInfoContainer">StyleInfoContainer</div>
     </div>
   );

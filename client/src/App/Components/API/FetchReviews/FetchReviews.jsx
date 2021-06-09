@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const FetchQA = (props) => {
+const FetchReviews = (props) => {
 
     useEffect( () => {
-        // FetchQA
+        // FetchReviews
     },[])
     return <div></div>;
 }
 
-export default FetchQA;
+export default FetchReviews;
