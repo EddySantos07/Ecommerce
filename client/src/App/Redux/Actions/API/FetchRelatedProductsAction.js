@@ -4,7 +4,7 @@ import fetchProductDetails from "./FetchProductDetails";
 import fetchStyles from "./fetchStyles.js";
 import fetchReviewsMetaData from "./FetchReviewsMetaDataAction";
 
-var fetchRelatedProducts = (productID) => {
+var fetchRelatedProducts = async (productID) => {
   return (dispatch) => {
     axios
       .get(
@@ -16,13 +16,13 @@ var fetchRelatedProducts = (productID) => {
         }
       )
       .then((data) => {
-        var allRelatedItems = [];
+        var allRelatedItemsArray = [];
 
         data.data.forEach((item) => {
-          allRelatedItems.push(fetchProductDetails(item));
+          allRelatedItemsArray.push(fetchProductDetails(item));
         });
 
-        return Promise.all(allRelatedItems);
+        return Promise.all(allRelatedItemsArray);
       })
       .then((allRelatedItems) => {
         var itemsWithStyle = [];
@@ -45,7 +45,7 @@ var fetchRelatedProducts = (productID) => {
         return Promise.all(itemsWithStyle);
       })
       .then((allRelatedWithStyle) => {
-        var relatedItemsWithRatings = [];
+        var relatedItemsWithRatingsArr = [];
 
         allRelatedWithStyle.forEach((product) => {
           var p = new Promise((resolve, reject) => {
@@ -54,13 +54,18 @@ var fetchRelatedProducts = (productID) => {
               resolve(product);
             });
           });
-          relatedItemsWithRatings.push(p);
+          relatedItemsWithRatingsArr.push(p);
         });
-        return Promise.all(relatedItemsWithRatings);
+
+        let relatedItemsWithRatings = Promise.all(relatedItemsWithRatingsArr);
+
+        dispatch({
+          type: "RELATED_ITEMS_WITH_RATINGS",
+          payload: relatedItemsWithRatings,
+        });
       })
       .catch((err) => {
-        // console.warn(err);
-        return err;
+        dispatch({ payload: "RELATED_ITEMS_WITH_RATINGS_ERR", payload: err });
       });
   };
 };
