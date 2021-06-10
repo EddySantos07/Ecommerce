@@ -2,8 +2,12 @@ import React, {useState, useContext, useEffect} from 'react';
 import ProductContext from '../context.jsx';
 import OutfitsCard from './Outfits-Card.jsx';
 import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
+
+import '../styles/_slick.scss';
+import '../styles/_slickTheme.scss';
+
+// import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
 
 
 var YourOutfitsList = () => {

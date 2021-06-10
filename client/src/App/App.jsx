@@ -30,7 +30,7 @@ class App extends React.Component {
         <FetchReviews />
         <FetchReviewsMetaData />
 
-        <div className="App">
+        <div className="">
           <Header />
           <ProductOverviewContainer />
           {/* related */}

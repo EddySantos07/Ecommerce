@@ -7,9 +7,9 @@ import store from "./Redux/store";
 
 import App from "./App";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("app")
-);
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.getElementById("app")
+// );

@@ -1,7 +1,11 @@
 import React, { useContext, useState } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import '../styles/_slick.scss';
+import '../styles/_slickTheme.scss';
+
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import ProductContext from '../context.jsx';
 import RelatedListCard from './Related-List-Card.jsx';
 

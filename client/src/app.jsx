@@ -11,10 +11,16 @@ import fetchStyles from './FetchData/fetchStyles.js';
 import fetchReviews from './FetchData/fetchReviews.js'
 import fetchReviewsMetaData from './FetchData/fetchReviewsMetaData.js'
 
-import ProductContainer from './Product/ProductContainer.jsx'
+import ProductOverviewContainer from './Redux/Containers/MainComponents/ProductOverviewContainer/ProductOverviewContainer';
+// import ProductContainer from './Product/ProductContainer.jsx's
 import QAContainer from './QA/QAContainer.jsx'
 import RelatedContainer from './Related/RelatedContainer.jsx'
 import ReviewContainer from './Reviews/ReviewContainer.jsx'
+
+
+import { Provider } from "react-redux";
+
+import store from "./Redux/store";
 
 let App = function(props) {
 
@@ -111,7 +117,7 @@ let App = function(props) {
     }}>
       <div>
         <div id='header'><img id='header-logo'src='https://i.imgur.com/g8hJeOQ.png' alt='cream company logo'/></div>
-        <ProductContainer />
+        <ProductOverviewContainer />
         <RelatedContainer product={currentProductDetails} async/>
         <QAContainer currentProductId={currentProduct} />
         <ReviewContainer currentSort={reviewsSortBy}/>
@@ -123,6 +129,8 @@ let App = function(props) {
 
   //RENDER
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+     <App />
+   </Provider>,
   document.getElementById('app')
 );
