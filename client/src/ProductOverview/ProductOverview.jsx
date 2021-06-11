@@ -18,6 +18,9 @@ const filterProducts = (Products, ProductStyles) => {
 };
 
 const ProductOverview = (props) => {
+
+  console.log(props,'props')
+
   let {
     Products,
     ProductStyles,
@@ -74,7 +77,7 @@ const ProductOverview = (props) => {
         MainCurrentStyle={MainCurrentStyle}
       />
       <AddToCartContainer />
-      <div className="StyleInfoContainer">StyleInfoContainer</div>
+      {/* <div className="StyleInfoContainer">StyleInfoContainer</div> */}
     </div>
   );
 };
