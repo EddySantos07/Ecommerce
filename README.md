@@ -43,6 +43,8 @@ Ensure that the following modules are installed before running npm install
 ## Components
 The seperate team member was in charge of the 4 main components seen on the app. Each team member utalized the above listed technologies.
 
+### Product Overview 2.0
+
 ### Product Overview
 
 ![Alt text](READMEimgs/Overview.png?raw=true "Title")
