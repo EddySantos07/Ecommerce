@@ -47,6 +47,11 @@ The seperate team member was in charge of the 4 main components seen on the app.
 
 ![Alt text](READMEimgs/Overview2.0.png?raw=true "Title")
 
+For Product Overview 2.0
+
+## Technologies Used -
+- [Redux](https://redux.js.org)
+
 ### Product Overview
 
 ![Alt text](READMEimgs/Overview.png?raw=true "Title")
