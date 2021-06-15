@@ -49,7 +49,7 @@ The seperate team member was in charge of the 4 main components seen on the app.
 
 For Product Overview 2.0
 
-## Technologies Used -
+## Tech Added -
 - [Redux](https://redux.js.org)
 
 ### Product Overview
